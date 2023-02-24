@@ -17,6 +17,7 @@ URL = 'https://github.com/rusty1s/pytorch_cluster'
 WITH_CUDA = False
 if torch.cuda.is_available():
     WITH_CUDA = CUDA_HOME is not None or torch.version.hip
+WITH_CUDA = True
 
 suffices = ['cpu', 'cuda'] if WITH_CUDA else ['cpu']
 if os.getenv('FORCE_CUDA', '0') == '1':
